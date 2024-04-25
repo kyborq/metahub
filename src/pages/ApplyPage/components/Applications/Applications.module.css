@@ -1,0 +1,25 @@
+.Applications {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 0 16px -4px rgba(33, 37, 41, 0.05);
+}
+
+.Title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Text {
+  font-size: 14px;
+  margin: 0;
+}
+
+.Application {
+  font-size: 14px;
+  font-weight: bold;
+}

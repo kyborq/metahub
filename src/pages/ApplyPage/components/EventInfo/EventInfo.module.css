@@ -1,0 +1,71 @@
+.EventInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 0 16px -4px rgba(33, 37, 41, 0.05);
+  gap: 8px;
+}
+
+.Title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.Description {
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.Link {
+  display: flex;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: #f2f2f2;
+  border-radius: 12px;
+  padding-right: 12px;
+}
+
+.Footer {
+  display: flex;
+  gap: 4px;
+}
+
+.Time {
+  display: flex;
+  flex: 1;
+  padding: 8px;
+  background-color: #f2f2f2;
+  border-radius: 12px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  gap: 16px;
+}
+
+.Links {
+  display: flex;
+  gap: 4px;
+}
+
+.InfoCell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media screen and (max-width: 480px) {
+  .Footer {
+    flex-direction: column;
+  }
+
+  .Link {
+    flex: 1;
+  }
+}

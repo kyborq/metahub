@@ -1,0 +1,19 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Fields {
+  display: flex;
+  gap: 4px;
+}
+
+.Flex {
+  flex: 3;
+}

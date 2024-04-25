@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: "Montserrat Variable", sans-serif;
+  display: flex;
+  min-height: 100dvh;
+  justify-content: center;
+  background-color: #f8f9fa;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  flex: 1;
+  gap: 4px;
+}
