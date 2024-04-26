@@ -24,7 +24,8 @@ export const ApplyPage = () => {
   });
 
   const applications = useGetApplications(id);
-  const { application, createApplication, isSuccess } = useCreateApplication();
+  const { application, createApplication, isSuccess, isApplicationCreating } =
+    useCreateApplication();
 
   useFieldArray({ control: methods.control, name: "members" });
   usePageTitle(event?.title);
@@ -79,7 +80,7 @@ export const ApplyPage = () => {
               )}
               <Button
                 label="Отправить заявку"
-                disabled={!methods.formState.isValid}
+                disabled={!methods.formState.isValid || isApplicationCreating}
               />
             </Form>
           </FormProvider>
