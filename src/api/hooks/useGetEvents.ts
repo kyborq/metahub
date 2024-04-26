@@ -3,6 +3,6 @@ import { useQuery } from "react-query";
 import { getEvents } from "../services/events-service";
 
 export const useGetEvents = () => {
-  const { data } = useQuery(["events"], getEvents);
-  return data;
+  const { data, isLoading } = useQuery(["events"], getEvents);
+  return { events: data, isLoading };
 };

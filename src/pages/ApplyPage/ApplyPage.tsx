@@ -5,6 +5,7 @@ import { useCreateApplication } from "../../api/hooks/useCreateApplication";
 import { useEventInfo } from "../../api/hooks/useEventInfo";
 import { useGetApplications } from "../../api/hooks/useGetApplications";
 import { CreateApplication } from "../../api/models/application-model";
+import { LoaderIcon } from "../../assets/icons";
 import { Form } from "../../components";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -31,7 +32,18 @@ export const ApplyPage = () => {
   usePageTitle(event?.title);
 
   if (isLoading) {
-    return null;
+    return (
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <LoaderIcon width={32} fill="#6c757d" />
+      </div>
+    );
   }
 
   if (!event) {
@@ -80,7 +92,8 @@ export const ApplyPage = () => {
               )}
               <Button
                 label="Отправить заявку"
-                disabled={!methods.formState.isValid || isApplicationCreating}
+                disabled={!methods.formState.isValid}
+                loading={isApplicationCreating}
               />
             </Form>
           </FormProvider>
