@@ -5,6 +5,7 @@ export type CreateApplication = {
   members: CreateMember[];
   event: string;
   alone?: boolean;
+  no_other_members?: boolean;
 };
 
 export type EditApplication = {
@@ -18,4 +19,5 @@ export type Application = {
   expand: { members: Member[] };
   members: string[];
   event: string;
+  no_other_members: boolean;
 };

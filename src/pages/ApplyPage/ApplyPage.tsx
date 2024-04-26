@@ -98,19 +98,35 @@ export const ApplyPage = () => {
                 <MemberForm key={index} index={index} />
               ))}
 
-              {event.team_size !== 1 && (
-                <Controller
-                  name="alone"
-                  control={methods.control}
-                  render={({ field }) => (
-                    <Check
-                      label="У меня еще нет команды"
-                      onChange={field.onChange}
-                      isChecked={field.value}
-                    />
-                  )}
-                />
-              )}
+              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                {event.team_size !== 1 && (
+                  <Controller
+                    name="alone"
+                    control={methods.control}
+                    render={({ field }) => (
+                      <Check
+                        label="У меня еще нет команды"
+                        onChange={field.onChange}
+                        isChecked={field.value}
+                      />
+                    )}
+                  />
+                )}
+
+                {isAlone && (
+                  <Controller
+                    name="no_other_members"
+                    control={methods.control}
+                    render={({ field }) => (
+                      <Check
+                        label="Хочу быть один"
+                        onChange={field.onChange}
+                        isChecked={field.value}
+                      />
+                    )}
+                  />
+                )}
+              </div>
 
               {!methods.formState.isValid && (
                 <div className="error">Все поля должны быть заполнены</div>

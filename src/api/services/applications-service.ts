@@ -19,6 +19,7 @@ export const createApplication = async (application: CreateApplication) => {
     const applicationData = {
       team,
       event,
+      no_other_members: application.no_other_members,
       members: memberIds,
     };
 

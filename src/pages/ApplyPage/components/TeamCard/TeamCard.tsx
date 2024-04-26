@@ -28,21 +28,37 @@ export const TeamCard = ({ application, max }: Props) => {
 
   return (
     <div className={styles.TeamCard}>
-      <h4 className={styles.Title}>{application.team}</h4>
+      <h4 className={styles.Title}>
+        {application.team}{" "}
+        {(application.no_other_members ||
+          application.members.length >= max) && (
+          <span style={{ fontSize: 13, color: "#c7c7c7", marginLeft: 12 }}>
+            Мест нет
+          </span>
+        )}
+        {!application.no_other_members && application.members.length < max && (
+          <span style={{ fontSize: 13, color: "#c7c7c7", marginLeft: 12 }}>
+            {application.members.length} из {max}
+          </span>
+        )}
+      </h4>
       <div className={styles.Members}>
-        {application.expand.members.map((member) => (
-          <div className={styles.Member}>
-            <div className={styles.Avatar}>
-              {member.name
-                .split(" ")
-                .map((a) => a[0])
-                .join("")
-                .toUpperCase()}
+        {!!application.expand.members.length &&
+          application.expand.members.map((member) => (
+            <div className={styles.Member}>
+              <div className={styles.Avatar}>
+                {member.name
+                  .split(" ")
+                  .map((a) => a[0])
+                  .join("")
+                  .toUpperCase()}
+              </div>
+              <span className={styles.Name}>
+                {member.name} ({member.grade})
+              </span>
             </div>
-            <span className={styles.Name}>{member.name}</span>
-          </div>
-        ))}
-        {application.members.length < max && (
+          ))}
+        {!application.no_other_members && application.members.length < max && (
           <button className={styles.Join} onClick={joinModal.open}>
             Записаться
           </button>
