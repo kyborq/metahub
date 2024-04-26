@@ -9,6 +9,7 @@ export type CreateApplication = {
 export type Application = {
   id: string;
   team: string;
-  members: Member[];
+  expand: { members: Member[] };
+  members: string[];
   event: string;
 };

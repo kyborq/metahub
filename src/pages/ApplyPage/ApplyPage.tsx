@@ -104,6 +104,11 @@ export const ApplyPage = () => {
         current={application?.id}
         count={event.max_applications}
       />
+
+      <div style={{ fontSize: 10, color: "#adb5bd", padding: 24 }}>
+        Используя сайт, вы автоматически соглашаетесь на обработку и хранение
+        персональных данных (а именно Фамилия, Имя, Класс участника (-ов))
+      </div>
     </>
   );
 };

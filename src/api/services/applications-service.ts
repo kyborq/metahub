@@ -32,7 +32,7 @@ export const createApplication = async (application: CreateApplication) => {
 
 export const listApplications = async (id: string) => {
   const { data } = await api.get<Result<Application>>(
-    `/collections/applications/records?filter=(event='${id}')&fields=id,team,members&expand=members`
+    `/collections/applications/records?expand=members&filter=(event='${id}')`
   );
   return data.items;
 };
