@@ -6,6 +6,11 @@ export type CreateApplication = {
   event: string;
 };
 
+export type EditApplication = {
+  application: Application;
+  member: CreateMember;
+};
+
 export type Application = {
   id: string;
   team: string;

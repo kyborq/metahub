@@ -103,6 +103,7 @@ export const ApplyPage = () => {
         applications={applications}
         current={application?.id}
         count={event.max_applications}
+        teamSize={event.team_size}
       />
 
       <div style={{ fontSize: 10, color: "#adb5bd", padding: 24 }}>

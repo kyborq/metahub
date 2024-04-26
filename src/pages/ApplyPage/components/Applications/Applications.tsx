@@ -6,9 +6,10 @@ type Props = {
   applications: Application[];
   current?: string;
   count: number;
+  teamSize: number;
 };
 
-export const Applications = ({ applications }: Props) => {
+export const Applications = ({ applications, teamSize }: Props) => {
   return (
     <div className={styles.Applications}>
       <h3 className={styles.Title}>Отправленные заявки</h3>
@@ -16,7 +17,7 @@ export const Applications = ({ applications }: Props) => {
         Проверьте что ваша команда отображается здесь, в отправленных заявках
       </p>
       {applications.map((application) => (
-        <TeamCard application={application} />
+        <TeamCard application={application} max={teamSize} />
       ))}
     </div>
   );
