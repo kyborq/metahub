@@ -17,7 +17,11 @@ export const Applications = ({ applications, teamSize }: Props) => {
         Проверьте что ваша команда отображается здесь, в отправленных заявках
       </p>
       {applications.map((application) => (
-        <TeamCard application={application} max={teamSize} />
+        <TeamCard
+          key={application.id}
+          application={application}
+          max={teamSize}
+        />
       ))}
     </div>
   );

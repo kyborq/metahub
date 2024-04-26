@@ -1,4 +1,9 @@
-import { FormProvider, useFieldArray, useForm } from "react-hook-form";
+import {
+  Controller,
+  FormProvider,
+  useFieldArray,
+  useForm,
+} from "react-hook-form";
 import { useParams } from "react-router-dom";
 
 import { useCreateApplication } from "../../api/hooks/useCreateApplication";
@@ -8,6 +13,7 @@ import { CreateApplication } from "../../api/models/application-model";
 import { LoaderIcon } from "../../assets/icons";
 import { Form } from "../../components";
 import { Button } from "../../components/Button";
+import { Check } from "../../components/Check";
 import { Input } from "../../components/Input";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { Applications, EventInfo, MemberForm } from "./components";
@@ -53,8 +59,11 @@ export const ApplyPage = () => {
   const handleCreateApplication = (data: CreateApplication) => {
     createApplication(data);
   };
+  const isAlone = methods.watch("alone");
 
-  const teamMembers = new Array(event.team_size).fill(0).map((_, i) => i);
+  const teamMembers = new Array(!isAlone ? event.team_size : 1)
+    .fill(0)
+    .map((_, i) => i);
 
   return (
     <>
@@ -84,9 +93,25 @@ export const ApplyPage = () => {
                   })}
                 />
               )}
+
               {teamMembers.map((index) => (
                 <MemberForm key={index} index={index} />
               ))}
+
+              {event.team_size !== 1 && (
+                <Controller
+                  name="alone"
+                  control={methods.control}
+                  render={({ field }) => (
+                    <Check
+                      label="У меня еще нет команды"
+                      onChange={field.onChange}
+                      isChecked={field.value}
+                    />
+                  )}
+                />
+              )}
+
               {!methods.formState.isValid && (
                 <div className="error">Все поля должны быть заполнены</div>
               )}

@@ -4,6 +4,7 @@ export type CreateApplication = {
   team: string;
   members: CreateMember[];
   event: string;
+  alone?: boolean;
 };
 
 export type EditApplication = {

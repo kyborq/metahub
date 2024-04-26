@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 
 import { Input } from "../../../../components/Input";
@@ -8,7 +9,13 @@ type Props = {
 };
 
 export const MemberForm = ({ index }: Props) => {
-  const { register } = useFormContext();
+  const { register, unregister } = useFormContext();
+
+  useEffect(() => {
+    return () => {
+      unregister(`members.${index}`);
+    };
+  }, []);
 
   return (
     <div className={styles.Form}>
