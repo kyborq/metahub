@@ -50,7 +50,7 @@ export const Modal = ({ state, width, title, children, onClose }: Props) => {
               translateY: 1000,
             }}
             transition={{
-              y: { type: "spring", bounce: 0, duration: 5 },
+              y: { type: "spring", duration: 0 },
               opacity: { duration: 0.2 },
             }}
           >

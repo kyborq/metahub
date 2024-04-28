@@ -1,0 +1,41 @@
+.Card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 0 16px -4px rgba(33, 37, 41, 0.05);
+  padding: 32px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.HeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.Text {
+  font-size: 12px;
+  user-select: none;
+  color: #adb5bd;
+}

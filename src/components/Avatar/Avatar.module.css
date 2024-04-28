@@ -1,0 +1,39 @@
+.Avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: #e9ecef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: 250ms;
+  position: relative;
+}
+
+.Name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Avatar.Clickable {
+  cursor: pointer;
+}
+
+.Avatar.Clickable:hover {
+  background-color: #dee2e6;
+  transition: 250ms;
+}
+
+.Avatar.Clickable:active {
+  transform: scale(0.9);
+  transition: 250ms;
+}

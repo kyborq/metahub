@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import { GamePage, HomePage, Root } from "./pages";
-import { ApplyPage } from "./pages/ApplyPage";
+import { ApplyPage, HomePage, ProfilePage, Root } from "@/pages";
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +12,8 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/:id",
-        element: <GamePage />,
+        path: "/profile/:id",
+        element: <ProfilePage />,
       },
       {
         path: "/apply/:id",

@@ -1,18 +1,21 @@
 .Button {
-  text-transform: uppercase;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 16px;
   color: #ffffff;
   background-color: #4361ee;
-  height: 48px;
+  height: 54px;
   padding: 0 32px;
   flex: none;
-  border-radius: 14px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
   font-family: inherit;
   user-select: none;
   transition: 250ms;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
 
 .Button:active {
@@ -26,4 +29,16 @@
   color: #6c757d;
   transform: none;
   cursor: default;
+}
+
+.Button.Compact {
+  height: 48px;
+  border-radius: 24px;
+  padding: 0 24px;
+}
+
+@media screen and (max-width: 512px) {
+  .Button {
+    padding: 0 24px;
+  }
 }
